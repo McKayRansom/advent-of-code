@@ -44,7 +44,7 @@ void part2(const int *numbers, size_t numbers_size) {
 
 int main() {
     int numbers[1024];
-    size_t numbers_size = parse_password_file(numbers);
+    size_t numbers_size = parse_number_file(numbers);
 
     part1(numbers, numbers_size);
     part2(numbers, numbers_size);

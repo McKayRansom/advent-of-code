@@ -56,10 +56,7 @@ static bool password_is_valid_part1(password_info *info) {
         if (info->password[i] == info->policy.letter)
             count++;
 
-    if (count >= info->policy.min && count <= info->policy.max)
-        return true;
-    else
-        return false;
+    return count >= info->policy.min && count <= info->policy.max;
 }
 
 // 1-indexed positions!
