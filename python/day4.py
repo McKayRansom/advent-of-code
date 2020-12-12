@@ -32,14 +32,14 @@ def passport_valid(passport):
 
 
 def part1():
-    print(parse_passports("day4_example.txt"))
+    print(parse_passports("../inputs/day4_example.txt"))
 
-    for passport in parse_passports("day4_example.txt"):
+    for passport in parse_passports("../inputs/day4_example.txt"):
         print(passport_valid(passport))
 
     count = sum([
         passport_valid(passport)
-        for passport in parse_passports("day4.txt")
+        for passport in parse_passports("../inputs/day4.txt")
     ])
     print(count)
     # 208

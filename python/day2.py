@@ -27,6 +27,6 @@ def calc_valid_passwords(passwords):
     ])
 
 
-info = parse_password_file("day2.txt")
+info = parse_password_file("../inputs/day2.txt")
 print(calc_valid_passwords(info))
 # Answers: 439, 584

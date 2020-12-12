@@ -83,10 +83,10 @@ void do_part(char *part_name, bool (*checker)(password_info *), password_info *i
 
 int main() {
     password_info example_info[10];
-    size_t example_info_size = parse_password_file(example_info, "../day2_example.txt");
+    size_t example_info_size = parse_password_file(example_info, "../../inputs/day2_example.txt");
 
     password_info actual_info[1024];
-    size_t actual_info_size = parse_password_file(actual_info, "../day2.txt");
+    size_t actual_info_size = parse_password_file(actual_info, "../../inputs/day2.txt");
 
     do_part("P1 Example", password_is_valid_part1, example_info, example_info_size);
     do_part("P1", password_is_valid_part1, actual_info, actual_info_size);

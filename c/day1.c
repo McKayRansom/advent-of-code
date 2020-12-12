@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 static size_t parse_number_file(int* numbers) {
-    FILE* nums = fopen("../day1.txt", "r");
+    FILE* nums = fopen("../../inputs/day1.txt", "r");
     if (nums == NULL)
         exit(1);
 

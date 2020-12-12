@@ -39,10 +39,10 @@ def calc_trees_hit_all_slopes(tree_map):
     return result
 
 
-print(calc_trees_hit(parse_map("day3_example.txt"), 3, 1))
-print(calc_trees_hit_all_slopes(parse_map("day3_example.txt")))
+print(calc_trees_hit(parse_map("../inputs/day3_example.txt"), 3, 1))
+print(calc_trees_hit_all_slopes(parse_map("../inputs/day3_example.txt")))
 # 2, 7, 3, 4, and 2
 
-print(calc_trees_hit(parse_map("day3.txt"), 3, 1))
-print(calc_trees_hit_all_slopes(parse_map("day3.txt")))
+print(calc_trees_hit(parse_map("../inputs/day3.txt"), 3, 1))
+print(calc_trees_hit_all_slopes(parse_map("../inputs/day3.txt")))
 # 3064612320

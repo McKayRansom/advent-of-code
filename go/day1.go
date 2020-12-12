@@ -1,3 +1,10 @@
+/*
+Notes:
+- dynamic array very easy!
+- error handling mandatory (probably for the best)
+- reading line by line weirdly hard
+*/
+
 package main
 
 import (
@@ -16,7 +23,7 @@ func main() {
 }
 
 func parseNumFile() []int {
-	file, err := os.Open("day1.txt")
+	file, err := os.Open("../inputs/day1.txt")
 	if err != nil {
 		log.Fatal(err)
 	}

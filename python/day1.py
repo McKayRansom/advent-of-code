@@ -2,7 +2,7 @@ def parse_number_file():
     return [
         int(line)
         for line in
-        open("day1.txt", "r").readlines()
+        open("../inputs/day1.txt", "r").readlines()
     ]
 
 
