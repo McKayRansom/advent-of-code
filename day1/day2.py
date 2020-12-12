@@ -15,16 +15,18 @@ def parse_password_file(file_name):
     return [parse_password_info(line) for line in lines]
 
 
-def calc_valid_passwords(password_info):
-    valid_passwords = 0
-    for p in password_info:
-        count = p["password"].count(p["letter"])
-        if p["num1"] <= count <= p["num2"]:
-            valid_passwords += 1
+def password_valid(p):
+    count = p["password"].count(p["letter"])
+    return p["num1"] <= count <= p["num2"]
 
-    return valid_passwords
+
+def calc_valid_passwords(passwords):
+    return sum([
+        password_valid(password)
+        for password in passwords
+    ])
 
 
 info = parse_password_file("day2.txt")
 print(calc_valid_passwords(info))
-
+# Answers: 439, 584

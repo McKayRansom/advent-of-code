@@ -1,11 +1,9 @@
-
 def parse_number_file():
-    lines = open("day1.txt", "r").readlines()
-
-    nums = []
-    for line in lines:
-        nums.append(int(line))
-    return nums
+    return [
+        int(line)
+        for line in
+        open("day1.txt", "r").readlines()
+    ]
 
 
 def part1(nums):
@@ -28,3 +26,4 @@ def part2(nums):
 numbers = parse_number_file()
 part1(numbers)
 part2(numbers)
+# 800139
