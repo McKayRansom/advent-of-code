@@ -22,16 +22,16 @@ class Day4Tests(unittest.TestCase):
         self.assertTrue(passport_is_valid_p1(self.test_passport))
 
     def test_birth_year(self):
-        self.assertFalse(byr_is_valid(2003))
-        self.assertTrue(byr_is_valid(2000))
+        self.assertFalse(byr_is_valid("2003"))
+        self.assertTrue(byr_is_valid("2000"))
 
     def test_issue_year(self):
-        self.assertFalse(iyr_is_valid(2009))
-        self.assertTrue(iyr_is_valid(2015))
+        self.assertFalse(iyr_is_valid("2009"))
+        self.assertTrue(iyr_is_valid("2015"))
 
     def test_expire_year(self):
-        self.assertFalse(eyr_is_valid(2019))
-        self.assertTrue(eyr_is_valid(2030))
+        self.assertFalse(eyr_is_valid("2019"))
+        self.assertTrue(eyr_is_valid("2030"))
 
     def test_field_height(self):
         self.assertFalse(hgt_is_valid("160in"))
@@ -81,7 +81,7 @@ class Day4Tests(unittest.TestCase):
         self.assertEqual(2, part2("../inputs/day4_example.txt"))
 
     def test_part2(self):
-        self.assertEqual(222, part2("../inputs/day4.txt"))
+        self.assertEqual(167, part2("../inputs/day4.txt"))
 
 
 if __name__ == '__main__':

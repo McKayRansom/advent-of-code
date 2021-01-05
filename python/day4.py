@@ -44,7 +44,8 @@ def passport_is_valid_p2(fields):
         eyr_is_valid(fields["eyr"]),
         hgt_is_valid(fields["hgt"]),
         hcl_is_valid(fields["hcl"]),
-        pid_is_valid(fields["pid"])
+        pid_is_valid(fields["pid"]),
+        ecl_is_valid(fields["ecl"])
     ])
 
     # a # followed by exactly six characters 0-9 or a-f
