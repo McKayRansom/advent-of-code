@@ -5,12 +5,14 @@ def num_in_any_sum(n, nums):
                 return True
     return False
 
+
 def parse_number_file(filename):
     with open(filename) as part1_file:
         return [
             int(line)
             for line in part1_file.readlines()
         ]
+
 
 # returns first number that is not the sum of 2 numbers
 # up to nums_back number back
@@ -38,6 +40,5 @@ def part2(filename, target_num):
                 return max(s['list']) + min(s['list'])
             if s['sum'] > target_num:
                 sums.remove(s)
-        sums.append({'sum':n, 'list':[n]})
+        sums.append({'sum': n, 'list': [n]})
     return None
-
