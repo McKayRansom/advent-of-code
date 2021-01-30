@@ -24,23 +24,30 @@ def part1(filename):
 def part2(filename):
     adapters = parse_number_file(filename)
     adapters.sort()
-    adapters.insert(0, 0)
     adapters.append(max(adapters) + 3)
+    adapters.insert(0, 0)
 
-    # new idea: start from finished list and try and remove adapters
-    combinations = [adapters]
-    for comb in combinations:
-        prev_diff = comb[1] - comb[0]
-        prev_val = comb[1]
-        for i in range(2, len(comb) - 1):
-            # if we can remove the previous entry, do it
-            val = comb[i]
-            diff = val - prev_val
-            if prev_diff + diff <= 3:
-                new_comb = comb[i - 1:]
-                new_comb[0] -= prev_diff
-                combinations.append(new_comb)
-            prev_diff = diff
-            prev_val = val
+    # new new idea, iterate through once and keep track of recent adaptors
+    connect = [0, 0, 1]
+    prev_val = -1
+    for joltage in adapters:
+        diff = joltage - prev_val
+        prev_val = joltage
+        # if there is a diff of 1 we can make a chain with below 1, 2, 3
+        if diff == 1:
+            connect.insert(0, connect[0] + connect[1] + connect[2])
 
-    return len(combinations)
+        # if there is a diff of 2 we can only make a chain with below 1, 2
+        elif diff == 2:
+            connect.insert(0, 0)  # empty space behind us
+            connect.insert(0, connect[1] + connect[2])
+        # if there is a diff of 3 we can only make a chain with below 2
+        elif diff == 3:
+            # two empty spaces behind us
+            connect.insert(0, 0)
+            connect.insert(0, 0)
+            connect.insert(0, connect[2])
+        else:
+            raise Exception("Bad joltage", diff)
+
+    return connect[0]
