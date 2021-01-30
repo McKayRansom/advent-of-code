@@ -34,7 +34,6 @@ class Day10Test(unittest.TestCase):
             day10.part2("../inputs/day10_example_large.txt")
         )
 
-    # @unittest.skip("takes too long?")
     def test_part2(self):
         self.assertEqual(
             113387824750592,
