@@ -1,3 +1,6 @@
+import math
+
+
 def parse_buses(csv_buses):
     return [
         int(bus)
@@ -35,6 +38,17 @@ def parse_buses_in_order(csv_buses):
     ]
 
 
+def lcm(a, b):
+    return abs(a * b) // math.gcd(a, b)
+
+
+def lcm_list(nums: list):
+    ans = 1
+    for n in nums:
+        ans = lcm(ans, n)
+    return ans
+
+
 def is_in_order_depart(t, buses):
     for b in buses:
         if b != 0 and t % b != 0:
@@ -43,15 +57,21 @@ def is_in_order_depart(t, buses):
     return True
 
 
+# we know that the next answer is a multiple of the lcm from the previous answer
 def find_in_order_departure(buses):
-    largest = buses.index(max(buses))
-    t = buses[largest] - largest
+    if len(buses) == 1:
+        return buses[0], buses[0]
+    prev_ans, prev_lcm = find_in_order_departure(buses[:-1])
+    if buses[-1] == 0:
+        return prev_ans, prev_lcm
+    t = prev_ans
     while True:
-        t += buses[largest]
+        t += prev_lcm
         if is_in_order_depart(t, buses):
-            return t
+            return t, lcm(prev_lcm, buses[-1])
 
 
 def part2(input_str):
     buses = parse_buses_in_order(input_str.splitlines()[1])
-    return find_in_order_departure(buses)
+    ans, _ = find_in_order_departure(buses)
+    return ans

@@ -29,17 +29,18 @@ class Day13Test(unittest.TestCase):
             day13.part2("0\n1789,37,47,1889")
         )
 
-    def test_part2_simple(self):
-        self.assertEqual(
-            77,
-            day13.part2("0,\n7,13")
-        )
+    # def test_part2_simple(self):
+    #     print(day13.part2("0\n7,13,x,x,59,x,31"))
+    #     self.assertEqual(
+    #         day13.lcm_list([7, 13, 59, 31]),
+    #         day13.part2("939\n7,13,x,x,59,x,31,19")
+    #     )
 
-    @unittest.skip("too long")
+    # @unittest.skip("too long")
     def test_part2(self):
         with open("../inputs/day13.txt") as in_file:
             self.assertEqual(
-                0,
+                247086664214628,
                 day13.part2(in_file.read())
             )
 
