@@ -29,11 +29,10 @@ mask = 00000000000000000000000000000000X0XX
 mem[26] = 1""")
         )
 
-    @unittest.skip("too long")
     def test_part2(self):
         with open("../inputs/day14.txt") as day14_file:
             self.assertEqual(
-                0,
+                5724245857696,
                 day14.part2(day14_file.read())
             )
 
